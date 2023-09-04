@@ -1,0 +1,9 @@
+logging~=4.2.0
+subprocess~=3.9.0
+base64~=1.6.3
+sys~=3.11.0
+re~=2.3.1
+streamlit~=1.13.0
+numpy~=1.25.1
+pandas~=1.5.0
+plotly.express~=0.11.3333
