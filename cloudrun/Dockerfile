@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["streamlit", "run", "/src/netstat/__init__.py", "--server.port", "8080"]
+CMD ["streamlit", "run", "src/netstat/__init__.py", "--server.port", "8080"]
