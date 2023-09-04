@@ -1,10 +1,15 @@
-FROM python:3.8
+FROM python:3.8-slim
 
+RUN apt-get update && \
+    apt-get install -y curl iputils-ping dnsutils iperf3 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy local code to the container image.
 WORKDIR /app
+COPY . /app
 
-COPY requirements.txt .
+# Install production dependencies.
 RUN pip install -r requirements.txt
 
-COPY . .
-
-CMD ["streamlit", "run", "src/netstat/__init__.py", "--server.port", "8080"]
+# Run the web service on container startup.
+CMD streamlit run --server.port 8080 --server.enableCORS false src/nettest/__init__.py
