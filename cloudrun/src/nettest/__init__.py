@@ -79,9 +79,10 @@ def doping(host):
   st.code(output, language='bash')
   regex_expr = r"time=(\d+\.\d+) ms"
   ping_data = parse_data(output, regex_expr)
-
-  plot_generic(ping_data,"Ping Attempt", "Ping Time (ms)")
-
+  try:
+    plot_generic(ping_data,"Ping Attempt", "Ping Time (ms)")
+  except:
+    st.info("No data to plot")
 def doiperf(iperf_input):
   input_parts = iperf_input.split()
   host = input_parts[0] if input_parts else ""
@@ -150,8 +151,9 @@ def main():
     button_http = st.button('GET')
     st.text("")
     st.text("")
+    st.text("")
     button_iperf = st.button('IPerf')
-    st.markdown("###")
+    st.text("")
     button_dns = st.button('DNS Lookup')
  
   if button_ping:
@@ -166,6 +168,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-  st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
-#  st.markdown('\n\n \n\nOriginal [repo](https://github.com/GoogleCloudPlatform/vpc-network-tester) (archived)by Brad Dietrich')
-#  st.markdown('This is a forked version adding new graphics and visuals edited with  ❤️  by gpalacin')
