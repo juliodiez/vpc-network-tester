@@ -97,7 +97,7 @@ def doiperf(iperf_input):
             stderr=subprocess.STDOUT,
         )
         output = process.stdout.read().decode('utf-8')
-        iperf_regex = r"(\d+\.\d+) (?:[KMG]?bits/sec)"
+        iperf_regex = r"(\d+(?:\.\d+)?)\s*(?:[KMG]?bits/sec)"
         iperf_data = parse_data(output, iperf_regex)
         regex_pattern_units = r"(\s+[a-zA-Z]+/[a-zA-Z]+)"
         result = re.search(regex_pattern_units, output)
