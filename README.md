@@ -1,6 +1,6 @@
-# Serverless VPC Access Diagnostic Tools
+# Serverless diagnostic tools
 
-Forked version from  [GoogleCloudPlatform/vpc-network-tester](https://github.com/willypalacin/vpc-network-tester.git)https://github.com/willypalacin/vpc-network-tester.git
+Forked version from  [GoogleCloudPlatform/vpc-network-tester](https://github.com/willypalacin/vpc-network-tester.git)
 
 This repository contains a Google Cloud Run service that is deployable in a customer's project to diagnose and debug the configuration of serverless networking for the serverless services including the VPC Access connectors and Direct VPC Egress feature in the customer's project.
 
