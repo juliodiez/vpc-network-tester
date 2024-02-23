@@ -1,7 +1,7 @@
 FROM python:3.8-slim
 
 RUN apt-get update && \
-    apt-get install -y curl iputils-ping dnsutils iperf3 && \
+    apt-get install -y curl iputils-ping dnsutils iperf && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy local code to the container image.

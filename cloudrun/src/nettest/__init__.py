@@ -88,7 +88,7 @@ def doiperf(iperf_input):
   host = input_parts[0] if input_parts else ""
   args = input_parts[1:] if len(input_parts) > 1 else []
   if re.match(iphostregex, host):
-    command = f"iperf3 -c {host} {' '.join(args)}"
+    command = f"iperf -i 1 -c {host} {' '.join(args)}"
     st.info(f"Running {command} ...")
     try:
         process = subprocess.Popen(
